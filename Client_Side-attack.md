@@ -1,4 +1,4 @@
-# 🧠 Client‑Side Attacks Cheat Sheet
+# 🧠 Client‑Side Attacks 
 
 > **GitHub‑ready notes** covering HTA attacks, Microsoft Office Macros, and Malicious PDFs for red‑team labs (HTB / THM / OSCP‑style).
 
