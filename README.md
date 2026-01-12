@@ -1,1 +1,1 @@
-#OSCP  - Welcome and good journey!
+OSCP  - Welcome and good journey!
