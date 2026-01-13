@@ -17,7 +17,7 @@
 - [Client_Side-attack](Client_Side-attack.md)
 - [File-Transfer](File-Transfer.md)
 - [Linux Enumeration and Privilege Escalation](linux_enumeration_and_privilege_escalation.md)
-- [Windows Enumeration and Local Privilege](Windows Enumeration and Local Privilege.md)
+- [Windows Enumeration and Local Privilege](Windows_Enumeration_and_Local_Privilege.md)
 - [Shell and Some Payloads](shell_and_some_payloads.md)
 - [Port Forwarding and Tunneling](port_forwarding_and_tunneling.md)
 - [Active Directory](active_directory.md)
