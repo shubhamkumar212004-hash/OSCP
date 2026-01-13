@@ -3,9 +3,7 @@
 ---
 
 <p align="center">
-  <a href="">
-    <img height=300 src="" />
-  </a>
+  <img src="images/Capture.PNG" height="300" />
 </p>
 
 ---
