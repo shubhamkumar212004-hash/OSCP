@@ -13,8 +13,8 @@
 ## Trigger Tips
 - [Information Gathering](information_gathering.md)
 - [Web Application Attacks](web_application_attacks.md)
-- [Password Attacks](password_attacks.md)
-- [Client-Side Attacks](client_side_attacks.md)
+- [Password Attacks](passwords_attacks.md)
+- [Client-Side Attacks](Client_Side_attack.md)
 - [File Transfers](file_transfers.md)
 - [Linux Enumeration and Privilege Escalation](linux_enumeration_and_privilege_escalation.md)
 - [Windows Enumeration and Privilege Escalation](windows_enumeration_and_privilege_escalation.md)
