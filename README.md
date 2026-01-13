@@ -19,7 +19,7 @@
 - [Linux Enumeration and Privilege Escalation](linux_enumeration_and_privilege_escalation.md)
 - [Windows Enumeration and Local Privilege](Windows_Enumeration_and_Local_Privilege.md)
 - [Shell and Some Payloads](Shells_and_Payloads.md)
-- [Port Forwarding and Tunneling](port_forwarding_and_tunneling.md)
+- [Port Forwarding and Tunneling](Port_Forwarding_and_Proxying.md)
 - [Active Directory](active_directory.md)
   
 ## Other Tips
