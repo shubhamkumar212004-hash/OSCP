@@ -14,7 +14,7 @@
 - [Information Gathering](information_gathering.md)
 - [Web Application Attacks](web_application_attacks.md)
 - [Password Attacks](passwords_attacks.md)
-- [Client_Side-attack](Client_Side_attack.md)
+- [Client_Side-attack](Client_Side-attack.md)
 - [File Transfers](file_transfers.md)
 - [Linux Enumeration and Privilege Escalation](linux_enumeration_and_privilege_escalation.md)
 - [Windows Enumeration and Privilege Escalation](windows_enumeration_and_privilege_escalation.md)
