@@ -75,6 +75,7 @@ $@$[1-2]$[0-9]$[0-9]$[0-9]
 
 ```bash
 john --wordlist=wordlist.txt --rules --stdout > mutated.txt
+john --format=NT --wordlist=/usr/share/wordlists/rockyou.txt ntlm.txt
 ```
 
 📖 **Reference:** [https://www.openwall.com/john/doc/RULES.shtml](https://www.openwall.com/john/doc/RULES.shtml)
