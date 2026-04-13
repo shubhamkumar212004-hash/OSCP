@@ -48,6 +48,7 @@ enum4linux -a target                  # Enumerate shares/users 🔍
 26. nxc smb 192.168.1.100 -u john.doe -p 'Passw0rd123!' -d fakeorg.local --shares
 27. nxc smb 192.168.1.100 -u jane.smith -p 'SecurePass456@' -d fakeorg.local --users
 28. nxc smb 192.168.1.100 -u john.doe -p 'Passw0rd123!' -d fakeorg.local --groups
+00. nxc ldap 192.168.159.129 -u schoudhari -p 'Sch0udhari123' --users
 29. nxc ldap 192.168.1.100 -u john.doe -p 'Passw0rd123!' -d FAKEORG.LOCAL --bloodhound -c All --dns-server 192.168.1.100 --verbose
 30. nxc ldap 192.168.1.100 -u jane.smith -p 'SecurePass456@' -d FAKEORG.LOCAL --bloodhound -c All --dns-server 192.168.1.100 --verbose
 31. nxc smb 192.168.1.100 -u john.doe -p 'Passw0rd123!' -d fakeorg.local --pass-pol
