@@ -1,3 +1,174 @@
+##Enumration and pentest command
+```bash
+# ===================== BASIC DOMAIN =====================
+Get-Domain
+Get-DomainSID
+Get-DomainPolicy
+(Get-DomainPolicy)."SystemAccess"
+(Get-DomainPolicy)."KerberosPolicy"
+Get-DomainController
+Get-DomainDNSZone
+Get-DomainDNSRecord
+
+# ===================== USERS =====================
+Get-DomainUser
+Get-DomainUser -Identity administrator
+Get-DomainUser -Properties samaccountname,description
+Get-DomainUser -Properties *
+Get-DomainUser -SPN
+Get-DomainUser -PreauthNotRequired
+Get-DomainUser -TrustedToAuth
+Get-DomainUser -AdminCount
+Get-DomainUser -LDAPFilter "(adminCount=1)"
+Get-DomainUser -LDAPFilter "(description=*pass*)"
+Get-DomainUser -LDAPFilter "(description=*pwd*)"
+Get-DomainUser -LDAPFilter "(description=*admin*)"
+
+# ===================== GROUPS =====================
+Get-DomainGroup
+Get-DomainGroup -Identity "Domain Admins"
+Get-DomainGroup -Identity "Enterprise Admins"
+Get-DomainGroup -AdminCount
+Get-DomainGroupMember "Domain Admins"
+Get-DomainGroupMember "Enterprise Admins"
+Get-DomainGroupMember "Schema Admins"
+Get-DomainGroupMember "Administrators"
+Get-DomainGroupMember -Identity "Domain Users"
+
+# ===================== COMPUTERS =====================
+Get-DomainComputer
+Get-DomainComputer -OperatingSystem "*Windows*"
+Get-DomainComputer -Ping
+Get-DomainComputer -Unconstrained
+Get-DomainComputer -TrustedToAuth
+Get-DomainComputer -LDAPFilter "(operatingsystem=*server*)"
+
+# ===================== OU & GPO =====================
+Get-DomainOU
+Get-DomainOU -FullData
+Get-DomainGPO
+Get-DomainGPO -Identity "<GPO Name>"
+Get-DomainGPO -Properties *
+Get-DomainGPOLocalGroup
+Get-DomainGPOUserLocalGroupMapping
+
+# ===================== ACL =====================
+Get-ObjectAcl -SamAccountName administrator
+Get-ObjectAcl -ResolveGUIDs
+Get-ObjectAcl -Identity "Domain Admins"
+Find-InterestingDomainAcl
+Find-InterestingDomainAcl -ResolveGUIDs
+
+# ===================== SHARES =====================
+Invoke-ShareFinder
+Invoke-ShareFinder -Verbose
+Find-DomainShare
+Find-DomainShare -CheckShareAccess
+Find-InterestingDomainShareFile
+Invoke-FileFinder
+Invoke-FileFinder -SearchTerm password
+Invoke-FileFinder -SearchTerm creds
+
+# ===================== LOCAL ADMIN =====================
+Find-LocalAdminAccess
+Invoke-CheckLocalAdminAccess
+Find-DomainUserLocation
+Find-DomainUserLocation -Verbose
+
+# ===================== SESSIONS =====================
+Get-NetSession
+Get-NetLoggedon
+Get-NetRDPSession
+
+# ===================== TRUSTS =====================
+Get-DomainTrust
+Get-Forest
+Get-ForestDomain
+Get-ForestTrust
+
+# ===================== NETWORK =====================
+Get-DomainSubnet
+Get-DomainSite
+
+# ===================== SID ENUM =====================
+Convert-SidToName S-1-5-21-XXX-500
+Convert-SidToName S-1-5-21-XXX-512
+Convert-NameToSid administrator
+Convert-NameToSid "Domain Admins"
+
+# ===================== KERBEROS =====================
+Get-DomainUser -SPN
+Get-DomainUser -PreauthNotRequired
+Get-DomainUser -TrustedToAuth
+
+# ===================== PASSWORD HUNT =====================
+Invoke-FileFinder -SearchTerm pass
+Invoke-FileFinder -SearchTerm admin
+Invoke-FileFinder -SearchTerm login
+Invoke-FileFinder -SearchTerm secret
+
+# ===================== PROCESS =====================
+Find-DomainProcess
+Find-DomainProcess -Verbose
+
+# ===================== EVENTS =====================
+Find-DomainUserEvent
+Find-DomainUserEvent -Verbose
+
+# ===================== ADVANCED =====================
+Get-DomainObject
+Get-DomainObject -LDAPFilter "(objectClass=*)"
+Get-DomainObjectAcl
+Get-DomainObjectAcl -ResolveGUIDs
+
+# ===================== EXTRA ENUM =====================
+Get-NetUser
+Get-NetGroup
+Get-NetComputer
+Get-NetDomain
+Get-NetDomainController
+
+# ===================== ADMIN HUNT =====================
+Invoke-UserHunter
+Invoke-UserHunter -CheckAccess
+Invoke-UserHunter -Stealth
+Invoke-UserHunter -Verbose
+
+# ===================== SHARE HUNT =====================
+Invoke-ShareFinder -Threads 50
+Invoke-FileFinder -Threads 50
+
+# ===================== GPO ABUSE CHECK =====================
+Get-DomainGPOUserLocalGroupMapping
+Get-DomainGPOLocalGroup
+
+# ===================== RANDOM USEFUL =====================
+Get-DomainGroup -LDAPFilter "(name=*admin*)"
+Get-DomainUser -LDAPFilter "(name=*svc*)"
+Get-DomainUser -LDAPFilter "(name=*test*)"
+Get-DomainUser -LDAPFilter "(name=*backup*)"
+
+# ===================== RID BASED =====================
+Convert-SidToName S-1-5-21-XXX-500
+Convert-SidToName S-1-5-21-XXX-501
+Convert-SidToName S-1-5-21-XXX-512
+Convert-SidToName S-1-5-21-XXX-513
+Convert-SidToName S-1-5-21-XXX-518
+Convert-SidToName S-1-5-21-XXX-519
+
+# ===================== LOOP ENUM =====================
+1..100 | % {Convert-SidToName "S-1-5-21-XXX-$_"}
+
+# ===================== FINAL =====================
+Get-Domain
+Get-DomainUser
+Get-DomainGroup
+Get-DomainComputer
+Find-LocalAdminAccess
+Invoke-ShareFinder
+```
+
+
 ```bash
 # Active Directory Pentesting Commands (200 Commands with Fake Credentials)
 
