@@ -1,4 +1,4 @@
-##Enumration and pentest command
+## Enumration and pentest command
 ```bash
 # ===================== BASIC DOMAIN =====================
 Get-Domain
