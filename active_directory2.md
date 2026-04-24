@@ -428,7 +428,7 @@ enum4linux -a target                  # Enumerate shares/users 🔍
 200. net view \\192.168.1.100 /all
 ```
 ```
-extra
+## extra
 # =========================
 # BASIC ENUMERATION
 # =========================
