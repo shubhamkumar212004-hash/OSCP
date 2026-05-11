@@ -197,6 +197,7 @@ Fake Credentials:
 13. nmap -p 445 --script smb-vuln-ms17-010 192.168.1.100
 14. nmap -p 389 --script ldap-search 192.168.1.100
 15. nmap -p 445 --script smb-protocols 192.168.1.100
+16. rustscan -a 10.129.244.81 --range 1-65535 --ulimit 5000 -- -sV -sC -oN rustscan_output.txt
 
 # smbclient
 smbclient \\target\share -U user      # Access SMB share 📂
